@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoSQL 科研数据分析系统</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260714-graphviews1" />
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark">NS</span>
+        <div>
+          <strong>NoSQL Scholar</strong>
+          <span>科研数据分析系统</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-page="dashboard"><i data-lucide="layout-dashboard"></i><span>总览</span></button>
+        <button class="nav-btn" data-page="analytics"><i data-lucide="bar-chart-3"></i><span>统计图表</span></button>
+        <button class="nav-btn" data-page="author"><i data-lucide="user-search"></i><span>学者画像</span></button>
+        <button class="nav-btn" data-page="graph"><i data-lucide="network"></i><span>知识图谱</span></button>
+        <button class="nav-btn" data-page="vector"><i data-lucide="scan-search"></i><span>向量检索</span></button>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="dashboard" class="page active">
+        <header class="hero-dashboard">
+          <div class="hero-copy">
+            <span class="eyebrow">Guangdong University of Technology · Scholar Analytics</span>
+            <h1>基于 NoSQL 的科研数据分析系统</h1>
+            <p>围绕广东工业大学科研论文数据，融合 MongoDB 文档存储、Neo4j 学术图谱、FAISS 语义检索与 SCI 风格统计图表。</p>
+            <div class="hero-tags">
+              <span>WOS 元数据</span>
+              <span>知识图谱</span>
+              <span>语义检索</span>
+              <span>科研画像</span>
+            </div>
+          </div>
+          <div class="hero-visual campus-hero" aria-hidden="true">
+            <div class="campus-photo"></div>
+            <div class="campus-caption">
+              <span>GDUT Research Data</span>
+              <strong>5,000</strong>
+              <em>Web of Science records</em>
+            </div>
+          </div>
+          <button id="refreshBtn" class="icon-button hero-refresh" title="刷新数据"><i data-lucide="refresh-cw"></i></button>
+        </header>
+        <div class="metric-grid">
+          <div class="metric metric-papers">
+            <div class="metric-top"><span>论文总数</span><i data-lucide="file-text"></i></div>
+            <small>Sample size</small>
+            <strong id="mPapers">-</strong>
+            <div class="spark"><span style="width:28%"></span><span style="width:42%"></span><span style="width:58%"></span><span style="width:82%"></span></div>
+            <em>Web of Science 记录入库</em>
+          </div>
+          <div class="metric metric-authors">
+            <div class="metric-top"><span>学者数量</span><i data-lucide="users"></i></div>
+            <small>Author nodes</small>
+            <strong id="mAuthors">-</strong>
+            <div class="spark"><span style="width:34%"></span><span style="width:64%"></span><span style="width:49%"></span><span style="width:76%"></span></div>
+            <em>作者实体与画像构建</em>
+          </div>
+          <div class="metric metric-keywords">
+            <div class="metric-top"><span>关键词数量</span><i data-lucide="tags"></i></div>
+            <small>Topic vocabulary</small>
+            <strong id="mKeywords">-</strong>
+            <div class="spark"><span style="width:60%"></span><span style="width:46%"></span><span style="width:88%"></span><span style="width:72%"></span></div>
+            <em>主题词与热点方向识别</em>
+          </div>
+          <div class="metric metric-journals">
+            <div class="metric-top"><span>期刊来源</span><i data-lucide="library"></i></div>
+            <small>Publication venues</small>
+            <strong id="mJournals">-</strong>
+            <div class="spark"><span style="width:38%"></span><span style="width:52%"></span><span style="width:68%"></span><span style="width:44%"></span></div>
+            <em>期刊、会议来源统计</em>
+          </div>
+        </div>
+        <section class="insight-strip">
+          <div><strong>研究热点</strong><span id="hotTopicText">deep learning · optimization · feature extraction</span></div>
+          <div><strong>核心学院</strong><span id="topSchoolText">自动化学院 / 计算机学院 / 机电工程学院</span></div>
+          <div><strong>分析路径</strong><span>文档存储 → 图谱建模 → 向量检索 → 可视化展示</span></div>
+        </section>
+        <section class="method-board">
+          <div class="method-title">
+            <span>Research workflow</span>
+            <strong>从 WOS 文献记录到 NoSQL 综合分析</strong>
+          </div>
+          <div class="method-step"><i data-lucide="braces"></i><strong>解析</strong><span>字段清洗 / 标准化</span></div>
+          <div class="method-step"><i data-lucide="database"></i><strong>存储</strong><span>MongoDB 文档模型</span></div>
+          <div class="method-step"><i data-lucide="network"></i><strong>图谱</strong><span>Neo4j 关联路径</span></div>
+          <div class="method-step"><i data-lucide="radar"></i><strong>语义</strong><span>FAISS 相似检索</span></div>
+        </section>
+        <div class="grid two">
+          <section class="panel">
+            <div class="panel-head"><h2>年度发文与被引趋势</h2></div>
+            <div id="yearChart" class="chart"></div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>学院发文量</h2></div>
+            <div id="schoolChart" class="chart"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="analytics" class="page">
+        <header class="page-title">
+          <h1>统计图表分析</h1>
+          <p>从年份、学院、关键词、期刊、学科类别和合作机构角度观察科研产出。</p>
+        </header>
+        <div class="grid two">
+          <section class="panel"><div class="panel-head"><h2>关键词热点 Top 30</h2></div><div id="keywordChart" class="chart tall"></div></section>
+          <section class="panel"><div class="panel-head"><h2>主要期刊分布</h2></div><div id="journalChart" class="chart tall"></div></section>
+          <section class="panel"><div class="panel-head"><h2>WOS 学科类别</h2></div><div id="categoryChart" class="chart tall"></div></section>
+          <section class="panel"><div class="panel-head"><h2>合作机构关系</h2></div><div id="coopChart" class="chart tall"></div></section>
+        </div>
+      </section>
+
+      <section id="author" class="page">
+        <header class="page-title">
+          <h1>学者查询与画像</h1>
+          <p>查看学者发文、被引、合作作者、研究关键词与代表论文。</p>
+        </header>
+        <div class="search-row">
+          <input id="authorInput" value="Liu, Bo" />
+          <button id="authorSearch"><i data-lucide="search"></i><span>查询</span></button>
+        </div>
+        <div id="authorResult" class="author-layout"></div>
+      </section>
+
+      <section id="graph" class="page">
+        <header class="page-title">
+          <h1>Neo4j 学术知识图谱</h1>
+          <p>节点包括 Author、Paper、Institution、School、Keyword、Journal，关系包括 WROTE、HAS_KEYWORD、BELONGS_TO、PUBLISHED_IN。</p>
+        </header>
+        <div class="graph-tabs" aria-label="知识图谱展示类型">
+          <button class="graph-tab active" data-graph-view="coauthor"><i data-lucide="users"></i><span>学者合作网络</span></button>
+          <button class="graph-tab" data-graph-view="keyword_author"><i data-lucide="tags"></i><span>关键词-作者</span></button>
+          <button class="graph-tab" data-graph-view="school_coop"><i data-lucide="building-2"></i><span>学院合作关系</span></button>
+          <button class="graph-tab" data-graph-view="shortest_path"><i data-lucide="route"></i><span>最短合作路径</span></button>
+          <button class="graph-tab" data-graph-view="representative"><i data-lucide="share-2"></i><span>代表性子图</span></button>
+        </div>
+        <div class="grid graph-grid">
+          <section class="panel">
+            <div class="panel-head graph-panel-head">
+              <div>
+                <h2 id="graphTitle">学者合作网络</h2>
+                <p id="graphDesc">节点为作者，连线表示两位作者共同发表过论文。</p>
+              </div>
+            </div>
+            <div id="graphChart" class="chart graph"></div>
+          </section>
+          <section class="panel query-panel">
+            <div class="panel-head"><h2>代表性 Cypher 查询</h2></div>
+            <pre id="cypherBlock"></pre>
+          </section>
+        </div>
+      </section>
+
+      <section id="vector" class="page">
+        <header class="page-title">
+          <h1>FAISS 向量语义检索</h1>
+          <p>基于论文标题、摘要和关键词构建文本向量，支持相似论文与相似学者发现。</p>
+        </header>
+        <div class="vector-tools">
+          <div class="search-row">
+            <input id="vectorInput" value="deep learning optimization artificial intelligence" />
+            <button id="vectorSearch"><i data-lucide="scan-search"></i><span>论文检索</span></button>
+          </div>
+          <div class="search-row">
+            <input id="similarAuthorInput" value="Liu, Bo" />
+            <button id="similarAuthorSearch"><i data-lucide="users"></i><span>相似学者</span></button>
+          </div>
+        </div>
+        <div class="grid two">
+          <section class="panel"><div class="panel-head"><h2>相似论文结果</h2><span id="vectorEngine"></span></div><div id="vectorResults" class="result-list"></div></section>
+          <section class="panel"><div class="panel-head"><h2>相似学者结果</h2></div><div id="similarAuthorResults" class="result-list compact"></div></section>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js?v=20260714-graphviews1"></script>
+  </body>
+</html>

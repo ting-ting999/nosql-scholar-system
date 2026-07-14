@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Local Office/WPS temporary files
+~$*.docx
+
+# Browser profiles generated during screenshot tests
+docs/edge-profile*/
+docs/qa_template_render/
+docs/_report_extract.txt
+
+# Generated vector artifacts. Render rebuilds them during deployment.
+data/faiss/*.npy
+data/faiss/*.index
+data/faiss/*.pkl
+
+# Local archives and ad-hoc screenshots
+*.zip
+*.tmp
+/*.png

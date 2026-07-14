@@ -1,0 +1,1464 @@
+{
+  "total_papers": 5000,
+  "total_authors": 8519,
+  "total_keywords": 14084,
+  "total_journals": 2038,
+  "year_distribution": [
+    {
+      "year": "1998",
+      "count": 6
+    },
+    {
+      "year": "1999",
+      "count": 12
+    },
+    {
+      "year": "2000",
+      "count": 20
+    },
+    {
+      "year": "2001",
+      "count": 13
+    },
+    {
+      "year": "2002",
+      "count": 23
+    },
+    {
+      "year": "2003",
+      "count": 46
+    },
+    {
+      "year": "2004",
+      "count": 37
+    },
+    {
+      "year": "2005",
+      "count": 51
+    },
+    {
+      "year": "2006",
+      "count": 42
+    },
+    {
+      "year": "2007",
+      "count": 66
+    },
+    {
+      "year": "2008",
+      "count": 100
+    },
+    {
+      "year": "2009",
+      "count": 116
+    },
+    {
+      "year": "2010",
+      "count": 81
+    },
+    {
+      "year": "2011",
+      "count": 134
+    },
+    {
+      "year": "2012",
+      "count": 94
+    },
+    {
+      "year": "2013",
+      "count": 114
+    },
+    {
+      "year": "2014",
+      "count": 109
+    },
+    {
+      "year": "2015",
+      "count": 113
+    },
+    {
+      "year": "2016",
+      "count": 140
+    },
+    {
+      "year": "2017",
+      "count": 173
+    },
+    {
+      "year": "2018",
+      "count": 170
+    },
+    {
+      "year": "2019",
+      "count": 198
+    },
+    {
+      "year": "2020",
+      "count": 258
+    },
+    {
+      "year": "2021",
+      "count": 338
+    },
+    {
+      "year": "2022",
+      "count": 502
+    },
+    {
+      "year": "2023",
+      "count": 497
+    },
+    {
+      "year": "2024",
+      "count": 630
+    },
+    {
+      "year": "2025",
+      "count": 588
+    },
+    {
+      "year": "2026",
+      "count": 329
+    }
+  ],
+  "citation_by_year": [
+    {
+      "year": "1998",
+      "citations": 32
+    },
+    {
+      "year": "1999",
+      "citations": 217
+    },
+    {
+      "year": "2000",
+      "citations": 13
+    },
+    {
+      "year": "2001",
+      "citations": 53
+    },
+    {
+      "year": "2002",
+      "citations": 140
+    },
+    {
+      "year": "2003",
+      "citations": 246
+    },
+    {
+      "year": "2004",
+      "citations": 165
+    },
+    {
+      "year": "2005",
+      "citations": 158
+    },
+    {
+      "year": "2006",
+      "citations": 111
+    },
+    {
+      "year": "2007",
+      "citations": 365
+    },
+    {
+      "year": "2008",
+      "citations": 312
+    },
+    {
+      "year": "2009",
+      "citations": 438
+    },
+    {
+      "year": "2010",
+      "citations": 679
+    },
+    {
+      "year": "2011",
+      "citations": 7965
+    },
+    {
+      "year": "2012",
+      "citations": 632
+    },
+    {
+      "year": "2013",
+      "citations": 669
+    },
+    {
+      "year": "2014",
+      "citations": 1115
+    },
+    {
+      "year": "2015",
+      "citations": 1438
+    },
+    {
+      "year": "2016",
+      "citations": 1502
+    },
+    {
+      "year": "2017",
+      "citations": 1983
+    },
+    {
+      "year": "2018",
+      "citations": 2387
+    },
+    {
+      "year": "2019",
+      "citations": 3188
+    },
+    {
+      "year": "2020",
+      "citations": 3715
+    },
+    {
+      "year": "2021",
+      "citations": 6349
+    },
+    {
+      "year": "2022",
+      "citations": 7574
+    },
+    {
+      "year": "2023",
+      "citations": 5120
+    },
+    {
+      "year": "2024",
+      "citations": 4908
+    },
+    {
+      "year": "2025",
+      "citations": 1991
+    },
+    {
+      "year": "2026",
+      "citations": 184
+    }
+  ],
+  "school_distribution": [
+    {
+      "name": "自动化学院",
+      "count": 823
+    },
+    {
+      "name": "计算机学院",
+      "count": 513
+    },
+    {
+      "name": "未知学院",
+      "count": 507
+    },
+    {
+      "name": "机电工程学院",
+      "count": 484
+    },
+    {
+      "name": "材料与能源学院",
+      "count": 421
+    },
+    {
+      "name": "信息工程学院",
+      "count": 349
+    },
+    {
+      "name": "物理与光电工程学院",
+      "count": 344
+    },
+    {
+      "name": "管理学院",
+      "count": 233
+    },
+    {
+      "name": "集成电路学院",
+      "count": 132
+    },
+    {
+      "name": "数学与统计学院",
+      "count": 122
+    },
+    {
+      "name": "艺术与设计学院",
+      "count": 98
+    },
+    {
+      "name": "Sch Appl Math",
+      "count": 72
+    },
+    {
+      "name": "环境科学与工程学院",
+      "count": 66
+    },
+    {
+      "name": "土木与交通工程学院",
+      "count": 65
+    },
+    {
+      "name": "轻工化工学院",
+      "count": 63
+    },
+    {
+      "name": "Fac Mat & Energy",
+      "count": 58
+    },
+    {
+      "name": "Fac Informat Engn",
+      "count": 47
+    },
+    {
+      "name": "Huali Coll",
+      "count": 31
+    },
+    {
+      "name": "Dept Automat",
+      "count": 25
+    },
+    {
+      "name": "Sch Econ",
+      "count": 22
+    }
+  ],
+  "journal_distribution": [
+    {
+      "name": "IEEE ACCESS",
+      "count": 50
+    },
+    {
+      "name": "CERAMICS INTERNATIONAL",
+      "count": 44
+    },
+    {
+      "name": "APPLIED SCIENCES-BASEL",
+      "count": 39
+    },
+    {
+      "name": "INFORMATION SCIENCES",
+      "count": 38
+    },
+    {
+      "name": "JOURNAL OF ALLOYS AND COMPOUNDS",
+      "count": 36
+    },
+    {
+      "name": "APPLIED THERMAL ENGINEERING",
+      "count": 31
+    },
+    {
+      "name": "JOURNAL OF MATERIALS SCIENCE-MATERIALS IN ELECTRONICS",
+      "count": 31
+    },
+    {
+      "name": "ENERGY",
+      "count": 31
+    },
+    {
+      "name": "SENSORS",
+      "count": 30
+    },
+    {
+      "name": "IEEE ANTENNAS AND WIRELESS PROPAGATION LETTERS",
+      "count": 28
+    },
+    {
+      "name": "SUSTAINABILITY",
+      "count": 28
+    },
+    {
+      "name": "APPLIED INTELLIGENCE",
+      "count": 26
+    },
+    {
+      "name": "JOURNAL OF ENERGY STORAGE",
+      "count": 24
+    },
+    {
+      "name": "ELECTRONICS",
+      "count": 23
+    },
+    {
+      "name": "GREEN ENERGY AND SUSTAINABLE DEVELOPMENT I",
+      "count": 22
+    },
+    {
+      "name": "NEUROCOMPUTING",
+      "count": 20
+    },
+    {
+      "name": "IEEE SENSORS JOURNAL",
+      "count": 19
+    },
+    {
+      "name": "INTERNATIONAL JOURNAL OF HEAT AND MASS TRANSFER",
+      "count": 19
+    },
+    {
+      "name": "ACTA PHYSICA SINICA",
+      "count": 19
+    },
+    {
+      "name": "IEEE TRANSACTIONS ON INSTRUMENTATION AND MEASUREMENT",
+      "count": 19
+    }
+  ],
+  "keyword_distribution": [
+    {
+      "name": "deep learning",
+      "count": 85
+    },
+    {
+      "name": "optimization",
+      "count": 56
+    },
+    {
+      "name": "feature extraction",
+      "count": 48
+    },
+    {
+      "name": "mechanical properties",
+      "count": 46
+    },
+    {
+      "name": "evolutionary algorithm",
+      "count": 42
+    },
+    {
+      "name": "attention mechanism",
+      "count": 34
+    },
+    {
+      "name": "microstructure",
+      "count": 32
+    },
+    {
+      "name": "training",
+      "count": 30
+    },
+    {
+      "name": "transfer learning",
+      "count": 27
+    },
+    {
+      "name": "machine learning",
+      "count": 26
+    },
+    {
+      "name": "adaptive control",
+      "count": 25
+    },
+    {
+      "name": "synchronization",
+      "count": 25
+    },
+    {
+      "name": "convolutional neural network",
+      "count": 24
+    },
+    {
+      "name": "sensors",
+      "count": 24
+    },
+    {
+      "name": "artificial intelligence",
+      "count": 23
+    },
+    {
+      "name": "stability",
+      "count": 23
+    },
+    {
+      "name": "convergence",
+      "count": 23
+    },
+    {
+      "name": "thermal conductivity",
+      "count": 23
+    },
+    {
+      "name": "graphene",
+      "count": 23
+    },
+    {
+      "name": "dictionary learning",
+      "count": 22
+    },
+    {
+      "name": "multi-agent systems",
+      "count": 22
+    },
+    {
+      "name": "multi-objective optimization",
+      "count": 22
+    },
+    {
+      "name": "accuracy",
+      "count": 22
+    },
+    {
+      "name": "neural network",
+      "count": 21
+    },
+    {
+      "name": "numerical simulation",
+      "count": 21
+    },
+    {
+      "name": "battery thermal management",
+      "count": 21
+    },
+    {
+      "name": "transformer",
+      "count": 20
+    },
+    {
+      "name": "genetic algorithm",
+      "count": 20
+    },
+    {
+      "name": "reliability",
+      "count": 19
+    },
+    {
+      "name": "support vector machine",
+      "count": 19
+    },
+    {
+      "name": "simulation",
+      "count": 19
+    },
+    {
+      "name": "fault diagnosis",
+      "count": 19
+    },
+    {
+      "name": "broadband",
+      "count": 19
+    },
+    {
+      "name": "object detection",
+      "count": 19
+    },
+    {
+      "name": "image processing",
+      "count": 19
+    },
+    {
+      "name": "fpga",
+      "count": 18
+    },
+    {
+      "name": "reinforcement learning",
+      "count": 18
+    },
+    {
+      "name": "particle swarm optimization",
+      "count": 17
+    },
+    {
+      "name": "multi-view learning",
+      "count": 17
+    },
+    {
+      "name": "neural networks",
+      "count": 17
+    }
+  ],
+  "category_distribution": [
+    {
+      "name": "Engineering, Electrical & Electronic",
+      "count": 1286
+    },
+    {
+      "name": "Materials Science, Multidisciplinary",
+      "count": 763
+    },
+    {
+      "name": "Computer Science, Artificial Intelligence",
+      "count": 730
+    },
+    {
+      "name": "Automation & Control Systems",
+      "count": 505
+    },
+    {
+      "name": "Computer Science, Information Systems",
+      "count": 446
+    },
+    {
+      "name": "Physics, Applied",
+      "count": 431
+    },
+    {
+      "name": "Computer Science, Theory & Methods",
+      "count": 430
+    },
+    {
+      "name": "Telecommunications",
+      "count": 356
+    },
+    {
+      "name": "Engineering, Mechanical",
+      "count": 306
+    },
+    {
+      "name": "Computer Science, Interdisciplinary Applications",
+      "count": 303
+    },
+    {
+      "name": "Optics",
+      "count": 282
+    },
+    {
+      "name": "Energy & Fuels",
+      "count": 256
+    },
+    {
+      "name": "Engineering, Manufacturing",
+      "count": 222
+    },
+    {
+      "name": "Chemistry, Physical",
+      "count": 217
+    },
+    {
+      "name": "Engineering, Multidisciplinary",
+      "count": 196
+    },
+    {
+      "name": "Mathematics, Applied",
+      "count": 181
+    },
+    {
+      "name": "Physics, Condensed Matter",
+      "count": 173
+    },
+    {
+      "name": "Instruments & Instrumentation",
+      "count": 171
+    },
+    {
+      "name": "Computer Science, Software Engineering",
+      "count": 151
+    },
+    {
+      "name": "Operations Research & Management Science",
+      "count": 150
+    }
+  ],
+  "top_authors": [
+    {
+      "author": "Liu, Bo",
+      "paper_count": 85,
+      "citation_count": 960,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Wang, Bo",
+      "paper_count": 84,
+      "citation_count": 392,
+      "first_year": 2018,
+      "academic_age": 9
+    },
+    {
+      "author": "Xiao, Yanshan",
+      "paper_count": 79,
+      "citation_count": 939,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Wu, Fugen",
+      "paper_count": 76,
+      "citation_count": 1142,
+      "first_year": 2007,
+      "academic_age": 19
+    },
+    {
+      "author": "Zhang, Haiyan",
+      "paper_count": 74,
+      "citation_count": 1614,
+      "first_year": 2006,
+      "academic_age": 20
+    },
+    {
+      "author": "Cheng, Lianglun",
+      "paper_count": 74,
+      "citation_count": 593,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Dong, Huafeng",
+      "paper_count": 72,
+      "citation_count": 943,
+      "first_year": 2010,
+      "academic_age": 17
+    },
+    {
+      "author": "Ling, Bingo Wing-Kuen",
+      "paper_count": 72,
+      "citation_count": 473,
+      "first_year": 2014,
+      "academic_age": 12
+    },
+    {
+      "author": "Yan, Qiusheng",
+      "paper_count": 66,
+      "citation_count": 932,
+      "first_year": 2007,
+      "academic_age": 20
+    },
+    {
+      "author": "Cai, Shuting",
+      "paper_count": 65,
+      "citation_count": 405,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Liu, Hai-Lin",
+      "paper_count": 63,
+      "citation_count": 650,
+      "first_year": 2007,
+      "academic_age": 20
+    },
+    {
+      "author": "Zhang, Xin",
+      "paper_count": 58,
+      "citation_count": 1070,
+      "first_year": 2007,
+      "academic_age": 20
+    },
+    {
+      "author": "Zhang, Yun",
+      "paper_count": 54,
+      "citation_count": 578,
+      "first_year": 2006,
+      "academic_age": 19
+    },
+    {
+      "author": "Xiong, Xiaoming",
+      "paper_count": 54,
+      "citation_count": 391,
+      "first_year": 2017,
+      "academic_age": 10
+    },
+    {
+      "author": "Cai, Nian",
+      "paper_count": 50,
+      "citation_count": 642,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Wang, Han",
+      "paper_count": 49,
+      "citation_count": 621,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Lu, Jiabin",
+      "paper_count": 49,
+      "citation_count": 582,
+      "first_year": 2007,
+      "academic_age": 20
+    },
+    {
+      "author": "Wen, Kunhua",
+      "paper_count": 48,
+      "citation_count": 374,
+      "first_year": 2018,
+      "academic_age": 9
+    },
+    {
+      "author": "Yang, Yuanzheng",
+      "paper_count": 48,
+      "citation_count": 318,
+      "first_year": 2012,
+      "academic_age": 15
+    },
+    {
+      "author": "Xie, Shengli",
+      "paper_count": 47,
+      "citation_count": 1053,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Peng, Shiguo",
+      "paper_count": 47,
+      "citation_count": 602,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Wang, Chengyong",
+      "paper_count": 42,
+      "citation_count": 767,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Chen, Xin",
+      "paper_count": 42,
+      "citation_count": 360,
+      "first_year": 2006,
+      "academic_age": 21
+    },
+    {
+      "author": "Lu, Renquan",
+      "paper_count": 41,
+      "citation_count": 2127,
+      "first_year": 2018,
+      "academic_age": 8
+    },
+    {
+      "author": "Chen, Ying",
+      "paper_count": 41,
+      "citation_count": 562,
+      "first_year": 2009,
+      "academic_age": 18
+    },
+    {
+      "author": "Lin, Hua-Tay",
+      "paper_count": 40,
+      "citation_count": 354,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Wang, Tao",
+      "paper_count": 40,
+      "citation_count": 346,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Zhang, Guoqing",
+      "paper_count": 38,
+      "citation_count": 2374,
+      "first_year": 2008,
+      "academic_age": 17
+    },
+    {
+      "author": "Mu, Zhongfei",
+      "paper_count": 37,
+      "citation_count": 1208,
+      "first_year": 2007,
+      "academic_age": 19
+    },
+    {
+      "author": "Qin, Yuwen",
+      "paper_count": 37,
+      "citation_count": 338,
+      "first_year": 2019,
+      "academic_age": 8
+    },
+    {
+      "author": "Wu, Jigang",
+      "paper_count": 37,
+      "citation_count": 126,
+      "first_year": 2017,
+      "academic_age": 10
+    },
+    {
+      "author": "Wang, Changhong",
+      "paper_count": 36,
+      "citation_count": 892,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Wen, Minru",
+      "paper_count": 34,
+      "citation_count": 324,
+      "first_year": 2019,
+      "academic_age": 7
+    },
+    {
+      "author": "Zeng, Bi",
+      "paper_count": 34,
+      "citation_count": 270,
+      "first_year": 2006,
+      "academic_age": 21
+    },
+    {
+      "author": "Chen, Lei",
+      "paper_count": 34,
+      "citation_count": 256,
+      "first_year": 2013,
+      "academic_age": 14
+    },
+    {
+      "author": "Gu, Fangqing",
+      "paper_count": 33,
+      "citation_count": 275,
+      "first_year": 2012,
+      "academic_age": 15
+    },
+    {
+      "author": "Liu, Yijun",
+      "paper_count": 33,
+      "citation_count": 233,
+      "first_year": 2007,
+      "academic_age": 20
+    },
+    {
+      "author": "Li, Hongyi",
+      "paper_count": 32,
+      "citation_count": 2343,
+      "first_year": 2018,
+      "academic_age": 8
+    },
+    {
+      "author": "Zhao, Weiren",
+      "paper_count": 32,
+      "citation_count": 486,
+      "first_year": 2015,
+      "academic_age": 10
+    },
+    {
+      "author": "Chen, Li",
+      "paper_count": 32,
+      "citation_count": 406,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Zhou, Jinyun",
+      "paper_count": 32,
+      "citation_count": 144,
+      "first_year": 2018,
+      "academic_age": 9
+    },
+    {
+      "author": "Luo, Xianglong",
+      "paper_count": 31,
+      "citation_count": 493,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Yang, Zhi",
+      "paper_count": 31,
+      "citation_count": 476,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "He, Yong",
+      "paper_count": 30,
+      "citation_count": 528,
+      "first_year": 2010,
+      "academic_age": 17
+    },
+    {
+      "author": "Xia, Tiansheng",
+      "paper_count": 30,
+      "citation_count": 306,
+      "first_year": 2021,
+      "academic_age": 6
+    },
+    {
+      "author": "Wu, Heng",
+      "paper_count": 30,
+      "citation_count": 297,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "Min, Yonggang",
+      "paper_count": 30,
+      "citation_count": 254,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "Liang, Yingzong",
+      "paper_count": 29,
+      "citation_count": 464,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "Chen, Jianyong",
+      "paper_count": 29,
+      "citation_count": 464,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "Zhong, Jiyou",
+      "paper_count": 29,
+      "citation_count": 382,
+      "first_year": 2020,
+      "academic_age": 7
+    },
+    {
+      "author": "Hao, Zhifeng",
+      "paper_count": 28,
+      "citation_count": 322,
+      "first_year": 2013,
+      "academic_age": 14
+    },
+    {
+      "author": "Wang, Yonghua",
+      "paper_count": 28,
+      "citation_count": 262,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Wang, Zhuowei",
+      "paper_count": 28,
+      "citation_count": 251,
+      "first_year": 2018,
+      "academic_age": 9
+    },
+    {
+      "author": "Zhang, Gary",
+      "paper_count": 28,
+      "citation_count": 161,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Meng, Anbo",
+      "paper_count": 27,
+      "citation_count": 976,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Liu, Zhenyu",
+      "paper_count": 27,
+      "citation_count": 466,
+      "first_year": 2011,
+      "academic_age": 16
+    },
+    {
+      "author": "Ye, Yuanmao",
+      "paper_count": 27,
+      "citation_count": 332,
+      "first_year": 2017,
+      "academic_age": 9
+    },
+    {
+      "author": "Teng, Shaohua",
+      "paper_count": 27,
+      "citation_count": 64,
+      "first_year": 2006,
+      "academic_age": 21
+    },
+    {
+      "author": "Han, Guojun",
+      "paper_count": 27,
+      "citation_count": 45,
+      "first_year": 2016,
+      "academic_age": 11
+    },
+    {
+      "author": "Yin, Hao",
+      "paper_count": 26,
+      "citation_count": 1195,
+      "first_year": 2014,
+      "academic_age": 13
+    },
+    {
+      "author": "Pan, Jisheng",
+      "paper_count": 26,
+      "citation_count": 415,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Ye, Liang Hua",
+      "paper_count": 26,
+      "citation_count": 84,
+      "first_year": 2023,
+      "academic_age": 4
+    },
+    {
+      "author": "Wu, Yuanqing",
+      "paper_count": 25,
+      "citation_count": 545,
+      "first_year": 2018,
+      "academic_age": 8
+    },
+    {
+      "author": "Liu, Zhi",
+      "paper_count": 25,
+      "citation_count": 328,
+      "first_year": 2006,
+      "academic_age": 19
+    },
+    {
+      "author": "Yu, Rong",
+      "paper_count": 25,
+      "citation_count": 327,
+      "first_year": 2012,
+      "academic_age": 13
+    },
+    {
+      "author": "Wang, Xiaolin",
+      "paper_count": 25,
+      "citation_count": 278,
+      "first_year": 2019,
+      "academic_age": 7
+    },
+    {
+      "author": "Yang, Zhijing",
+      "paper_count": 25,
+      "citation_count": 206,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Xie, Xiaozhu",
+      "paper_count": 24,
+      "citation_count": 566,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Yu, Simin",
+      "paper_count": 24,
+      "citation_count": 294,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Huang, Le",
+      "paper_count": 24,
+      "citation_count": 246,
+      "first_year": 2019,
+      "academic_age": 7
+    },
+    {
+      "author": "Guo, Wei-Ming",
+      "paper_count": 24,
+      "citation_count": 242,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Guan, Yisheng",
+      "paper_count": 24,
+      "citation_count": 223,
+      "first_year": 2017,
+      "academic_age": 9
+    },
+    {
+      "author": "Yang, Xiaoqing",
+      "paper_count": 23,
+      "citation_count": 1507,
+      "first_year": 2015,
+      "academic_age": 10
+    },
+    {
+      "author": "Liao, Nuo",
+      "paper_count": 23,
+      "citation_count": 492,
+      "first_year": 2012,
+      "academic_age": 15
+    },
+    {
+      "author": "Zhang, Depeng",
+      "paper_count": 23,
+      "citation_count": 209,
+      "first_year": 2008,
+      "academic_age": 19
+    },
+    {
+      "author": "Liu, Yuan",
+      "paper_count": 23,
+      "citation_count": 159,
+      "first_year": 2019,
+      "academic_age": 8
+    },
+    {
+      "author": "Li, Jian-Feng",
+      "paper_count": 23,
+      "citation_count": 114,
+      "first_year": 2015,
+      "academic_age": 12
+    },
+    {
+      "author": "Fu, Fenglian",
+      "paper_count": 22,
+      "citation_count": 8110,
+      "first_year": 2010,
+      "academic_age": 14
+    },
+    {
+      "author": "Zhou, Qi",
+      "paper_count": 22,
+      "citation_count": 1199,
+      "first_year": 2018,
+      "academic_age": 9
+    },
+    {
+      "author": "Li, Zhenghui",
+      "paper_count": 22,
+      "citation_count": 958,
+      "first_year": 2016,
+      "academic_age": 9
+    }
+  ],
+  "cooperation_distribution": [
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Shantou University",
+      "count": 12
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "South China University of Technology",
+      "count": 8
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "RIKEN",
+      "count": 7
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Sun Yat Sen University",
+      "count": 7
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Macau",
+      "count": 6
+    },
+    {
+      "source": "Guangdong Polytechnic Normal University",
+      "target": "Guangdong University of Technology",
+      "count": 6
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Guangxi University",
+      "count": 6
+    },
+    {
+      "source": "Deakin University",
+      "target": "Guangdong University of Technology",
+      "count": 5
+    },
+    {
+      "source": "Foshan University",
+      "target": "Guangdong University of Technology",
+      "count": 5
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Shenzhen University",
+      "count": 4
+    },
+    {
+      "source": "Chinese Academy of Sciences",
+      "target": "Guangdong University of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University",
+      "target": "Guangdong University of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University",
+      "target": "of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Nanyang Technological University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Xiamen University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Xidian University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Finance",
+      "target": "Guangdong University of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Middlesex University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Tokyo",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Harbin Engineering University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Hong Kong",
+      "count": 3
+    },
+    {
+      "source": "Guangdong Polytechnic Normal",
+      "target": "Guangdong University of Technology",
+      "count": 3
+    },
+    {
+      "source": "Guangdong Polytechnic Normal",
+      "target": "University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Huazhong University of Science &",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "South China University of",
+      "count": 3
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "LingNan Normal University",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Oslo",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Texas Arlington",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Texas System",
+      "count": 2
+    },
+    {
+      "source": "University of Texas Arlington",
+      "target": "University of Texas System",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Otago",
+      "count": 2
+    },
+    {
+      "source": "Griffith University",
+      "target": "Guangdong University of Technology",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Arizona",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Norwegian University of Science &",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Technology (NTNU)",
+      "count": 2
+    },
+    {
+      "source": "Norwegian University of Science &",
+      "target": "Technology (NTNU)",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Ji Hua Laboratory",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Harbin Institute of Technology",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Southern Medical University - China",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Hamburg University of Technology",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Peng Cheng Laboratory",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Huazhong University of Science & Technology",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Zhongkai University of Agriculture & Engineering",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Technology Sydney",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "University of Sussex",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Guangzhou University",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "South China Normal University",
+      "count": 2
+    },
+    {
+      "source": "Guangdong University of Technology",
+      "target": "Leibniz University Hannover",
+      "count": 2
+    }
+  ]
+}
