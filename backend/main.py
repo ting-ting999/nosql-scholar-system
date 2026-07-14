@@ -8,7 +8,6 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from backend.data_store import ROOT, author_profile, graph_preview, load_summary, search_papers
-from backend.vector_search import build_index, search_similar_authors, search_similar_papers
 
 
 app = FastAPI(title="NoSQL Scholar Analytics", version="1.0.0")
@@ -60,16 +59,22 @@ def graph(
 
 @app.post("/api/vector/build")
 def rebuild_vector_index():
+    from backend.vector_search import build_index
+
     return build_index()
 
 
 @app.get("/api/vector/papers")
 def vector_papers(q: str, top_k: int = Query(default=10, ge=1, le=30)):
+    from backend.vector_search import search_similar_papers
+
     return search_similar_papers(q, top_k)
 
 
 @app.get("/api/vector/authors")
 def vector_authors(name: str, top_k: int = Query(default=8, ge=1, le=20)):
+    from backend.vector_search import search_similar_authors
+
     return search_similar_authors(name, top_k)
 
 

@@ -11,10 +11,20 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED_DIR = ROOT / "data" / "processed"
 NEO4J_DIR = ROOT / "data" / "neo4j"
+VECTOR_META_PATH = ROOT / "data" / "faiss" / "paper_meta.json"
 
 
 @lru_cache(maxsize=1)
 def load_papers() -> list[dict[str, Any]]:
+    # The vector metadata contains every field needed by the Web API but is
+    # much smaller than the full WOS document set. Prefer it in the server.
+    if VECTOR_META_PATH.exists():
+        return json.loads(VECTOR_META_PATH.read_text(encoding="utf-8"))
+    return load_full_papers()
+
+
+@lru_cache(maxsize=1)
+def load_full_papers() -> list[dict[str, Any]]:
     path = PROCESSED_DIR / "papers.json"
     if not path.exists():
         return []

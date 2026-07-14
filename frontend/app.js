@@ -1,6 +1,7 @@
 const $ = (selector) => document.querySelector(selector);
 const charts = {};
 let summaryCache = null;
+const loadedPages = new Set(["dashboard", "analytics"]);
 
 const sciPalette = ["#93C8ED", "#F7C1C1", "#AEDBD2", "#BC9CC8", "#D5E9C6", "#E4F0F7", "#D3DCF0", "#DE837D", "#A7C8F2", "#F4DDEB"];
 const axisStyle = {
@@ -272,11 +273,17 @@ async function searchSimilarAuthor() {
 
 function bindNavigation() {
   document.querySelectorAll(".nav-btn").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
       document.querySelectorAll(".nav-btn").forEach((item) => item.classList.remove("active"));
       document.querySelectorAll(".page").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
-      document.getElementById(button.dataset.page).classList.add("active");
+      const page = button.dataset.page;
+      document.getElementById(page).classList.add("active");
+      if (!loadedPages.has(page)) {
+        loadedPages.add(page);
+        if (page === "author") await loadAuthor();
+        if (page === "graph") await renderGraph("coauthor");
+      }
       setTimeout(() => Object.values(charts).forEach((item) => item.resize()), 60);
     });
   });
@@ -292,11 +299,7 @@ async function init() {
   bindNavigation();
   lucide.createIcons();
   await loadSummary();
-  await loadAuthor();
   bindGraphTabs();
-  await renderGraph("coauthor");
-  await searchVector();
-  await searchSimilarAuthor();
   $("#refreshBtn").addEventListener("click", loadSummary);
   $("#authorSearch").addEventListener("click", loadAuthor);
   $("#vectorSearch").addEventListener("click", searchVector);

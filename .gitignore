@@ -13,6 +13,7 @@ docs/_report_extract.txt
 
 # Generated vector artifacts. Render rebuilds them during deployment.
 data/faiss/*.npy
+data/faiss/*.npz
 data/faiss/*.index
 data/faiss/*.pkl
 
