@@ -17,6 +17,21 @@ async function getJson(url, options) {
   return res.json();
 }
 
+function setSearchState(target, message, type = "loading") {
+  target.innerHTML = `<div class="search-state ${type}">${message}</div>`;
+}
+
+function setButtonBusy(button, busy, busyText = "查询中") {
+  const label = button.querySelector("span");
+  if (busy) {
+    button.dataset.label = label.textContent;
+    label.textContent = busyText;
+  } else if (button.dataset.label) {
+    label.textContent = button.dataset.label;
+  }
+  button.disabled = busy;
+}
+
 function chart(id) {
   if (!charts[id]) charts[id] = echarts.init(document.getElementById(id));
   return charts[id];
@@ -195,9 +210,22 @@ function renderAuthor(profile) {
 }
 
 async function loadAuthor() {
-  const name = encodeURIComponent($("#authorInput").value.trim());
-  if (!name) return;
-  renderAuthor(await getJson(`/api/authors/${name}`));
+  const rawName = $("#authorInput").value.trim();
+  const button = $("#authorSearch");
+  const target = $("#authorResult");
+  if (!rawName) {
+    setSearchState(target, "请输入学者姓名后再查询。", "error");
+    return;
+  }
+  setButtonBusy(button, true, "查询中");
+  setSearchState(target, `正在查询 ${rawName} 的学者画像...`);
+  try {
+    renderAuthor(await getJson(`/api/authors/${encodeURIComponent(rawName)}`));
+  } catch (error) {
+    setSearchState(target, "学者查询失败，请稍后重试。", "error");
+  } finally {
+    setButtonBusy(button, false);
+  }
 }
 
 async function renderGraph(view = "coauthor") {
@@ -245,30 +273,58 @@ function bindGraphTabs() {
 }
 
 async function searchVector() {
-  const q = encodeURIComponent($("#vectorInput").value.trim());
-  if (!q) return;
-  const data = await getJson(`/api/vector/papers?q=${q}&top_k=10`);
-  $("#vectorEngine").textContent = `engine: ${data.engine}`;
-  $("#vectorResults").innerHTML = data.results.map((item) => `
-    <div class="result-item">
-      <strong>${item.title}</strong>
-      <span>相似度 ${item.score} · ${item.year || ""} · ${item.journal || ""}</span>
-      <span>${item.keywords.join(" / ")}</span>
-    </div>
-  `).join("");
+  const rawQuery = $("#vectorInput").value.trim();
+  const button = $("#vectorSearch");
+  const target = $("#vectorResults");
+  if (!rawQuery) {
+    setSearchState(target, "请输入论文主题或关键词后再检索。", "error");
+    return;
+  }
+  setButtonBusy(button, true, "检索中");
+  setSearchState(target, "正在计算论文语义相似度...");
+  try {
+    const data = await getJson(`/api/vector/papers?q=${encodeURIComponent(rawQuery)}&top_k=10`);
+    $("#vectorEngine").textContent = `engine: ${data.engine}`;
+    target.innerHTML = data.results.length ? data.results.map((item) => `
+      <div class="result-item">
+        <strong>${item.title}</strong>
+        <span>相似度 ${item.score} · ${item.year || ""} · ${item.journal || ""}</span>
+        <span>${item.keywords.join(" / ")}</span>
+      </div>
+    `).join("") : `<div class="search-state">没有找到相关论文，请更换关键词。</div>`;
+  } catch (error) {
+    setSearchState(target, "论文检索失败，请稍后重试。", "error");
+  } finally {
+    setButtonBusy(button, false);
+  }
 }
 
 async function searchSimilarAuthor() {
-  const name = encodeURIComponent($("#similarAuthorInput").value.trim());
-  if (!name) return;
-  const data = await getJson(`/api/vector/authors?name=${name}&top_k=10`);
-  if (!data.found) {
-    $("#similarAuthorResults").innerHTML = (data.candidates || []).map((name) => `<div class="result-item"><strong>${name}</strong><span>候选学者</span></div>`).join("");
+  const rawName = $("#similarAuthorInput").value.trim();
+  const button = $("#similarAuthorSearch");
+  const target = $("#similarAuthorResults");
+  if (!rawName) {
+    setSearchState(target, "请输入学者姓名后再检索。", "error");
     return;
   }
-  $("#similarAuthorResults").innerHTML = data.results.map((item) => `
-    <div class="result-item"><strong>${item.author}</strong><span>${item.score}</span></div>
-  `).join("");
+  setButtonBusy(button, true, "检索中");
+  setSearchState(target, "正在构建作者研究画像并计算相似度...");
+  try {
+    const data = await getJson(`/api/vector/authors?name=${encodeURIComponent(rawName)}&top_k=10`);
+    if (!data.found) {
+      target.innerHTML = (data.candidates || []).length
+        ? data.candidates.map((name) => `<div class="result-item"><strong>${name}</strong><span>候选学者</span></div>`).join("")
+        : `<div class="search-state">未找到该学者，请输入数据中的完整英文姓名。</div>`;
+      return;
+    }
+    target.innerHTML = data.results.map((item) => `
+      <div class="result-item"><strong>${item.author}</strong><span>相似度 ${item.score}</span></div>
+    `).join("");
+  } catch (error) {
+    setSearchState(target, "相似学者检索失败，请稍后重试。", "error");
+  } finally {
+    setButtonBusy(button, false);
+  }
 }
 
 function bindNavigation() {
@@ -283,6 +339,10 @@ function bindNavigation() {
         loadedPages.add(page);
         if (page === "author") await loadAuthor();
         if (page === "graph") await renderGraph("coauthor");
+        if (page === "vector") {
+          await searchVector();
+          await searchSimilarAuthor();
+        }
       }
       setTimeout(() => Object.values(charts).forEach((item) => item.resize()), 60);
     });
@@ -301,9 +361,18 @@ async function init() {
   await loadSummary();
   bindGraphTabs();
   $("#refreshBtn").addEventListener("click", loadSummary);
-  $("#authorSearch").addEventListener("click", loadAuthor);
-  $("#vectorSearch").addEventListener("click", searchVector);
-  $("#similarAuthorSearch").addEventListener("click", searchSimilarAuthor);
+  $("#authorSearchForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    loadAuthor();
+  });
+  $("#vectorSearchForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    searchVector();
+  });
+  $("#similarAuthorSearchForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    searchSimilarAuthor();
+  });
   window.addEventListener("resize", () => Object.values(charts).forEach((item) => item.resize()));
 }
 

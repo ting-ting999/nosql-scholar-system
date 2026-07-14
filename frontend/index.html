@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>NoSQL 科研数据分析系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260714-graphviews1" />
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="/static/styles.css?v=20260714-searchfix1" />
+    <script src="/static/vendor/echarts.min.js?v=5.6.0"></script>
+    <script src="/static/vendor/lucide.min.js?v=0.468.0"></script>
   </head>
   <body>
     <header class="site-header">
@@ -125,10 +125,10 @@
           <h1>学者查询与画像</h1>
           <p>查看学者发文、被引、合作作者、研究关键词与代表论文。</p>
         </header>
-        <div class="search-row">
-          <input id="authorInput" value="Liu, Bo" />
-          <button id="authorSearch"><i data-lucide="search"></i><span>查询</span></button>
-        </div>
+        <form id="authorSearchForm" class="search-row">
+          <input id="authorInput" value="Liu, Bo" aria-label="学者姓名" autocomplete="off" />
+          <button id="authorSearch" type="submit"><i data-lucide="search"></i><span>查询学者</span></button>
+        </form>
         <div id="authorResult" class="author-layout"></div>
       </section>
 
@@ -167,14 +167,14 @@
           <p>基于论文标题、摘要和关键词构建文本向量，支持相似论文与相似学者发现。</p>
         </header>
         <div class="vector-tools">
-          <div class="search-row">
-            <input id="vectorInput" value="deep learning optimization artificial intelligence" />
-            <button id="vectorSearch"><i data-lucide="scan-search"></i><span>论文检索</span></button>
-          </div>
-          <div class="search-row">
-            <input id="similarAuthorInput" value="Liu, Bo" />
-            <button id="similarAuthorSearch"><i data-lucide="users"></i><span>相似学者</span></button>
-          </div>
+          <form id="vectorSearchForm" class="search-row">
+            <input id="vectorInput" value="deep learning optimization artificial intelligence" aria-label="论文研究主题" autocomplete="off" />
+            <button id="vectorSearch" type="submit"><i data-lucide="scan-search"></i><span>检索论文</span></button>
+          </form>
+          <form id="similarAuthorSearchForm" class="search-row">
+            <input id="similarAuthorInput" value="Liu, Bo" aria-label="相似学者姓名" autocomplete="off" />
+            <button id="similarAuthorSearch" type="submit"><i data-lucide="users"></i><span>查找学者</span></button>
+          </form>
         </div>
         <div class="grid two">
           <section class="panel"><div class="panel-head"><h2>相似论文结果</h2><span id="vectorEngine"></span></div><div id="vectorResults" class="result-list"></div></section>
@@ -183,6 +183,6 @@
       </section>
     </main>
 
-    <script src="/static/app.js?v=20260714-render-memory1"></script>
+    <script src="/static/app.js?v=20260714-searchfix1"></script>
   </body>
 </html>
